@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝚁ꫝʜɪɴ ᴍꫝʟs !i VIP HACK</title>
+    <style>
+        body { background-color: #0e1111; color: #00ff00; font-family: 'Courier New', Courier, monospace; text-align: center; padding: 20px; }
+        .box { border: 2px solid #ff0000; padding: 20px; border-radius: 15px; background: rgba(255, 0, 0, 0.05); display: inline-block; width: 90%; max-width: 400px; }
+        .period { font-size: 24px; color: #ffff00; }
+        .signal { font-size: 30px; margin: 20px 0; font-weight: bold; }
+        .footer { margin-top: 30px; font-size: 14px; color: #888; }
+        button { background: #ff0000; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2 style="color: #ff0000;">𝚁 ꫝ ʜ ɪ ɴ   ᴍ ꫝ ʟ s  ! i   U L T R A</h2>
+        <p>DEVELOPER: <span style="color: #fff;">SAFAIT</span></p>
+        <hr style="border: 1px solid #333;">
+        
+        <div class="period" id="period">PERIOD: LOADING...</div>
+        <div class="signal" id="signal">ANALYZING...</div>
+        <div id="accuracy" style="color: #00ffff;">ACCURACY: --%</div>
+        
+        <p style="color: #ff4444; font-size: 12px; margin-top: 15px;">RULE: USE 3-STEP RECOVERY (1x-3x-9x)</p>
+        <br>
+        <button onclick="generateSignal()">GET NEXT SIGNAL</button>
+    </div>
+
+    <div class="footer">
+        © 2026 Developer Safait | VIP ACCESS ONLY
+    </div>
+
+    <script>
+        function generateSignal() {
+            // পিরিয়ড নম্বর জেনারেট (টাইম অনুযায়ী)
+            let now = new Date();
+            let periodStr = now.getFullYear().toString() + (now.getMonth() + 1).toString().padStart(2, '0') + now.getDate().toString().padStart(2, '0') + now.getHours().toString().padStart(2, '0') + now.getMinutes().toString().padStart(2, '0');
+            
+            document.getElementById('period').innerText = "PERIOD: " + periodStr;
+            
+            const colors = ["RED 🔴", "GREEN 🟢"];
+            const sizes = ["BIG", "SMALL"];
+            
+            let resColor = colors[Math.floor(Math.random() * colors.length)];
+            let resSize = sizes[Math.floor(Math.random() * sizes.length)];
+            let accuracy = Math.floor(Math.random() * (99 - 92 + 1)) + 92;
+
+            document.getElementById('signal').innerHTML = resColor + " + " + resSize;
+            document.getElementById('accuracy').innerText = "ACCURACY: " + accuracy + "%";
+        }
+        // অটোমেটিক প্রথম সিগন্যাল
+        generateSignal();
+    </script>
+</body>
+</html>
