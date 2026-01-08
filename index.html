@@ -3,96 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝚁 ꫝ ʜ ɪ ɴ   ᴍ ꫝ ʟ s  ! i - ULTRA VIP</title>
+    <title>𝚁 ꫝ ʜ ɪ ɴ   ᴍ ꫝ ʟ s  ! i - DK WIN FIX</title>
     <style>
         body { background-color: #000; color: #0f0; font-family: 'Segoe UI', sans-serif; text-align: center; margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
-        #login-screen { background: #0a0a0a; border: 2px solid #ff0000; padding: 40px; border-radius: 20px; box-shadow: 0 0 30px #ff000044; }
+        #login-screen { background: #0a0a0a; border: 2px solid #ff0000; padding: 40px; border-radius: 20px; }
         .main-card { display: none; border: 2px solid #ff0000; background: #0a0a0a; padding: 25px; border-radius: 20px; width: 90%; max-width: 400px; box-shadow: 0 0 30px #ff000066; }
         input { background: #111; border: 1px solid #ff0000; color: #fff; padding: 10px; border-radius: 5px; width: 80%; margin-bottom: 20px; text-align: center; }
         button { background: #ff0000; color: #fff; border: none; padding: 10px 30px; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .period-box { font-size: 20px; color: #fff; background: #222; padding: 12px; border-radius: 10px; margin-bottom: 15px; border: 1px solid #444; letter-spacing: 1px; }
-        .signal-text { font-size: 40px; font-weight: 900; color: #0f0; text-shadow: 0 0 20px #0f0; }
-        .timer-text { font-size: 26px; color: #ff0000; font-weight: 900; margin-bottom: 10px; }
+        .period-box { font-size: 16px; color: #fff; background: #222; padding: 12px; border-radius: 10px; margin-bottom: 15px; border: 1px solid #444; letter-spacing: 1px; font-weight: bold; }
+        .signal-text { font-size: 38px; font-weight: 900; color: #0f0; text-shadow: 0 0 20px #0f0; }
+        .timer-text { font-size: 26px; color: #ff0000; font-weight: 900; }
     </style>
 </head>
 <body>
 
 <div id="login-screen">
     <h2 style="color: #ff0000;">VIP ACCESS</h2>
-    <p style="color: #888;">Enter Password to Unlock</p>
     <input type="password" id="passInput" placeholder="Enter Password...">
     <br>
     <button onclick="checkPass()">UNLOCK</button>
 </div>
 
 <div id="main-content" class="main-card">
-    <h1 style="color: #ff0000; margin: 0;">𝚁 ꫝ ʜ ɪ ɴ   ᴍ ꫝ ʟ s  ! i</h1>
-    <p style="color: #666; font-size: 12px;">DK WIN SERVER AI v6.0</p>
+    <h2 style="color: #ff0000; margin: 0;">𝚁 ꫝ ʜ ɪ ɴ   ᴍ ꫝ ʟ s  ! i</h2>
+    <p style="color: #888; font-size: 11px;">DK WIN SERVER AI v7.0 (SURE WIN)</p>
     
     <div class="period-box" id="periodDisplay">SYNCING...</div>
     <div class="timer-text" id="timerDisplay">00s</div>
 
-    <div style="background: #111; padding: 30px; border-radius: 15px; border: 1px solid #333;">
+    <div style="background: #111; padding: 25px; border-radius: 15px; border: 1px solid #333; margin-top: 10px;">
         <div id="signalDisplay" class="signal-text">ANALYZING</div>
-        <div style="color: #00ffff; font-size: 14px; margin-top: 10px;">🔥 1-STEP SURE WIN 🔥</div>
+        <div style="color: #00ffff; font-size: 14px; margin-top: 10px;">🔥 1-STEP FIXED WIN 🔥</div>
     </div>
 
-    <div style="color: #ffcc00; font-size: 12px; font-weight: bold; margin-top: 15px;">DEVELOPER: SAFAIT | VIP LICENSE</div>
+    <div style="color: #ffcc00; font-size: 12px; font-weight: bold; margin-top: 15px;">DEVELOPER: SAFAIT | mals@11</div>
 </div>
 
 <script>
     function checkPass() {
-        let pass = document.getElementById('passInput').value;
-        if(pass === "mals@11") {
+        if(document.getElementById('passInput').value === "mals@11") {
             document.getElementById('login-screen').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
             startEngine();
-        } else {
-            alert("Wrong Password! Access Denied.");
-        }
+        } else { alert("Wrong Password!"); }
     }
 
     function updateHack() {
         let now = new Date();
-        
-        // DK Win Correct Period Format (YYYYMMDD + Serial)
         let yyyy = now.getFullYear();
         let mm = (now.getMonth() + 1).toString().padStart(2, '0');
         let dd = now.getDate().toString().padStart(2, '0');
         
-        // DK Win 30s logic: Every minute has 2 periods
-        let totalMinutes = (now.getHours() * 60) + now.getMinutes();
-        let cycle = Math.floor(now.getSeconds() / 30);
-        let serial = (totalMinutes * 2 + cycle + 1).toString().padStart(4, '0');
-        let periodId = yyyy + mm + dd + serial;
+        // অরিজিনাল DK Win পিরিয়ড ক্যালকুলেশন (YYYYMMDD + 1000 + সিরিয়াল)
+        let totalSecondsSinceDayStart = (now.getHours() * 3600) + (now.getMinutes() * 60) + now.getSeconds();
+        let periodSerial = Math.floor(totalSecondsSinceDayStart / 30) + 1;
+        let finalPeriod = yyyy + mm + dd + "1000" + periodSerial.toString().padStart(5, '0');
         
-        document.getElementById('periodDisplay').innerText = "PERIOD: " + periodId;
+        document.getElementById('periodDisplay').innerText = "PERIOD: " + finalPeriod;
 
-        // 1-Step Sure Win Logic
+        // ১-স্টেপ উইন লজিক
         const colors = ["RED 🔴", "GREEN 🟢"];
         const sizes = ["BIG", "SMALL"];
-        
-        let color = colors[Math.floor(Math.random() * colors.length)];
-        let size = sizes[Math.floor(Math.random() * sizes.length)];
-
-        document.getElementById('signalDisplay').innerText = color + " | " + size;
+        document.getElementById('signalDisplay').innerText = colors[Math.floor(Math.random() * 2)] + " | " + sizes[Math.floor(Math.random() * 2)];
     }
 
     function startEngine() {
         setInterval(() => {
             let now = new Date();
-            let seconds = now.getSeconds();
-            let remaining = 30 - (seconds % 30);
-
+            let remaining = 30 - (now.getSeconds() % 30);
             document.getElementById('timerDisplay').innerText = remaining.toString().padStart(2, '0') + "s";
-
-            if (remaining === 30) {
-                updateHack();
-            }
+            if (remaining === 30) updateHack();
         }, 1000);
-        updateHack(); // Initial Call
+        updateHack();
     }
 </script>
-
 </body>
 </html>
